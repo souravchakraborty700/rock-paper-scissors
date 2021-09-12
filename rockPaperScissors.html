@@ -1,0 +1,61 @@
+<html>
+    <head>
+
+    </head>
+        <body>
+        
+            <script>
+                function game() {
+                let playerSelection = prompt("Rock, Paper or Scissors?").toLowerCase();
+                
+                function computerPlay() {
+                    return (["rock", "paper", "scissors"])[Math.floor(Math.random()* 3 )];
+                }
+                let computerSelection = computerPlay();
+
+                let round = playRound(playerSelection, computerSelection);
+                if(round === "win") {
+                    return "You Win!";
+                } else if (round === "lose") {
+                    return "You loses";
+                } else if (round === "tie") {
+                    return "Tied";
+                }
+            }
+
+
+                //play a round and get a winner/losser
+                function playRound(playerSelection, computerSelection) {
+                    if (playerSelection == "paper") {
+                        if (computerSelection == "rock") {
+                            return "win";
+                        } else if (computerSelection == "scissors") {
+                            return "lose";
+                        } else {
+                            return "tie"
+                        }
+                    }
+                     
+                    if (playerSelection == "rock") {
+                        if (computerSelection == "paper") {
+                            return "lose";
+                        } else if (computerSelection == "scissors") {
+                            return "win";
+                        } else {
+                            return "tie";
+                        }
+                    }
+                    if (playerSelection == "scissors") {
+                        if (computerSelection == "rock") {
+                            return "lose";
+                        } else if (computerSelection == "paper") {
+                            return "win";
+                        } else {
+                            return "tie";
+                        }
+                    }
+                }
+
+            </script>
+        </body>
+</html>
